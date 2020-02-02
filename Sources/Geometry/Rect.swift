@@ -23,6 +23,18 @@ extension CGRect {
 	
 }
 
+extension CGRect {
+	
+	public var units: CGRect {
+		
+		CGRect(
+			origin: origin / size,
+			size: .unit
+		)
+		
+	}
+}
+
 /// Initialize from a Center and a Radius
 /// Initialize from a Center and an X and Y
 extension CGRect {
@@ -90,6 +102,17 @@ extension CGRect {
 			y: lhs.minY * rhs.height, 
 			width: lhs.width * rhs.width, 
 			height: lhs.height * rhs.height
+		)
+
+	}
+
+	public static func /(lhs: CGRect, rhs: CGSize) -> CGRect {
+		
+		CGRect(
+			x: lhs.minX / rhs.width, 
+			y: lhs.minY / rhs.height, 
+			width: lhs.width / rhs.width, 
+			height: lhs.height / rhs.height
 		)
 
 	}

@@ -30,6 +30,8 @@ extension CGVector {
 		
 	}
 	
+	public var units: CGPoint { self / hypot(dx,dy) }
+
 }
 
 /// Addition between a Vector and a Point giving a Point

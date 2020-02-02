@@ -13,7 +13,17 @@ import CoreGraphics
 /// Unit Point
 extension CGPoint {
 	
-	public static var unit:CGPoint { return CGPoint(x: 1, y: 1) }
+	public static var unit:CGPoint {
+		
+		CGPoint(x: 1, y: 1)
+		
+	}
+	
+	public var units: CGPoint {
+		
+		self / hypot(x,y)
+		
+	}
 	
 }
 
@@ -80,6 +90,15 @@ extension CGPoint {
 		CGPoint(
 			x: lhs.x * rhs.width,
 			y: lhs.y * rhs.height
+		)
+		
+	}
+	
+	public static func /(lhs: CGPoint, rhs:CGSize) ->CGPoint {
+		
+		CGPoint(
+			x: lhs.x / rhs.width,
+			y: lhs.y / rhs.height
 		)
 		
 	}
