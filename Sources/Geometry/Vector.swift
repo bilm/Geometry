@@ -8,6 +8,9 @@
 import Foundation
 import CoreGraphics
 
+/// A Unit Vector
+/// A Unit Vector in the x-Axis
+/// A Unit Vector in the y-Axis
 extension CGVector {
 	
 	public static var unit: CGVector {
@@ -29,6 +32,7 @@ extension CGVector {
 	
 }
 
+/// Addition between a Vector and a Point giving a Point
 extension CGVector {
 	
 	public static func +(lhs: CGVector, rhs: CGPoint) ->CGPoint {
@@ -42,7 +46,7 @@ extension CGVector {
 
 }
 
-
+/// Addition between two Vectors
 extension CGVector {
 	
 	public static func +(lhs:CGVector, rhs:CGVector) ->CGVector {
@@ -64,6 +68,7 @@ extension CGVector {
 
 }
 
+/// Multiply a Vector and a Float
 extension CGVector { 
 
 	public static func *(lhs:CGVector, rhs:CGFloat) ->CGVector {
@@ -85,6 +90,8 @@ extension CGVector {
 
 }
 
+/// Limit a Size by a potential maximum X and Y
+/// Limit a Size by a potential minimum X and Y
 extension CGVector {
 	
 	public func limit(maxX: CGFloat, maxY: CGFloat) ->CGVector {
@@ -107,9 +114,13 @@ extension CGVector {
 
 }
 
+/// a Vector in Polar coordinates
+/// a Length of a Vector
+/// the Angle of a Vector
+/// the Angle between two Vectors
 extension CGVector {
 	
-	public var polar:(r:CGFloat, theta:CGFloat) { 
+	public var polar:(r: CGFloat, theta: CGFloat) { 
 		
 		(length, theta)
 		

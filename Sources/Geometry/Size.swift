@@ -9,7 +9,7 @@
 import Foundation
 import CoreGraphics
 
-
+/// a Unit Size
 extension CGSize {
 	
 	public static var unit:CGSize {
@@ -23,7 +23,7 @@ extension CGSize {
 	
 }
 
-
+/// Addition between two Sizes
 extension CGSize {
 	
 	public static func +(lhs:CGSize, rhs:CGSize) -> CGSize {
@@ -39,13 +39,37 @@ extension CGSize {
 	
 }
 
+/// Multiply a Size and a Float
 extension CGSize {
 	
-	public static func *(s:CGSize, p:CGPoint) ->CGPoint {
+	public static func *(lhs: CGSize, rhs: CGFloat) ->CGSize {
+		
+		CGSize(
+			width: lhs.width * rhs,
+			height: lhs.height * rhs
+		)
+		
+	}
+	
+	public static func /(lhs: CGSize, rhs: CGFloat) ->CGSize {
+		
+		CGSize(
+			width: lhs.width / rhs,
+			height: lhs.height / rhs
+		)
+		
+	}
+
+}
+
+/// Multiply a Size and a Point
+extension CGSize {
+	
+	public static func *(lhs: CGSize, rhs: CGPoint) ->CGPoint {
 		
 		CGPoint(
-			x: p.x * s.width,
-			y: p.y * s.height
+			x: rhs.x * lhs.width,
+			y: rhs.y * lhs.height
 		)
 		
 	}
@@ -53,29 +77,22 @@ extension CGSize {
 
 }
 
+/// Multiply a Size and a Vector
 extension CGSize {
 	
-	public static func *(s:CGSize, c:CGFloat) ->CGSize {
+	public static func *(lhs: CGSize, rhs: Vector) ->Vector {
 		
-		CGSize(
-			width: s.width * c,
-			height: s.height * c
+		CGPoint(
+			x: rhs.dx * lhs.width,
+			y: rhs.dy * lhs.height
 		)
 		
 	}
-	
-	public static func /(s:CGSize, c:CGFloat) ->CGSize {
-		
-		CGSize(
-			width: s.width / c,
-			height: s.height / c
-		)
-		
-	}
+
 
 }
 
-
+/// Limit a Size by a potential maximum Width and Height
 extension CGSize {
 	
 	public func limit(maxWidth:CGFloat, maxHeight:CGFloat) ->CGSize {
@@ -98,6 +115,7 @@ extension CGSize {
 	
 }
 
+/// Limit a Size by a potential minimum Width and Height
 extension CGSize {
 	
 	public func limit(minWidth:CGFloat, minHeight:CGFloat) ->CGSize {

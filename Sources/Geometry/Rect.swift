@@ -23,6 +23,63 @@ extension CGRect {
 	
 }
 
+/// Initialize from a Center and a Radius
+/// Initialize from a Center and an X and Y
+extension CGRect {
+	
+	public init(center c:CGPoint, radius r:CGFloat) {
+		
+		self.init(
+			x: c.x - r,
+			y: c.y - r,
+			width: r * 2,
+			height: r * 2
+		)
+		
+	}
+	
+	public init(center c:CGPoint, radiusX rx:CGFloat, radiusY ry:CGFloat) {
+		
+		self.init(
+			x: c.x - rx,
+			y: c.y - ry,
+			width: rx * 2,
+			height: ry * 2
+		)
+		
+	}
+	
+}
+
+/// the Extent of a Rect
+extension CGRect {
+	
+	public var extent:CGPoint {
+		
+		CGPoint(
+			x: maxX,
+			y: maxY
+		)
+	
+	}
+
+}
+
+/// the Center of a Rect
+extension CGRect {
+		
+	public var center:CGPoint {
+		
+		CGPoint(
+			x: midX,
+			y: midY
+		)
+		
+	}
+	
+}
+
+
 /// Multiply by a Size giving a Rect
 extension CGRect {
 	
@@ -39,33 +96,7 @@ extension CGRect {
 	
 }
 
-
-extension CGRect {
-	
-	public var extent:CGPoint {
-		
-		CGPoint(
-			x: maxX,
-			y: maxY
-		)
-	
-	}
-
-}
-
-extension CGRect {
-		
-	public var center:CGPoint {
-		
-		CGPoint(
-			x: midX,
-			y: midY
-		)
-		
-	}
-	
-}
-
+/// offset a Rect by a Vector
 extension CGRect {
 	
 	public func offset(vector: CGVector) ->CGRect {
@@ -76,6 +107,10 @@ extension CGRect {
 	
 }
 
+/// Limit a Rect by a potential minimum Size and a potential
+/// maximum Size
+///
+/// Constain a Rect inside another Rect
 extension CGRect {
 
 	public func limitBy(minimum:CGSize? = nil, maximum:CGSize? = nil) ->CGRect {
@@ -106,6 +141,7 @@ extension CGRect {
 	
 }
 
+/// Clamp a Point to be within a Rect
 extension CGRect {
 	
 	public func clamp(point:CGPoint) ->CGPoint {
@@ -113,32 +149,6 @@ extension CGRect {
 		CGPoint(
 			x: max(minX, min(maxX, point.x)), 
 			y: max(minY, min(maxY, point.y))
-		)
-		
-	}
-	
-}
-
-extension CGRect {
-	
-	public init(center c:CGPoint, radius r:CGFloat) {
-		
-		self.init(
-			x: c.x - r,
-			y: c.y - r,
-			width: r * 2,
-			height: r * 2
-		)
-		
-	}
-	
-	public init(center c:CGPoint, radiusX rx:CGFloat, radiusY ry:CGFloat) {
-		
-		self.init(
-			x: c.x - rx,
-			y: c.y - ry,
-			width: rx * 2,
-			height: ry * 2
 		)
 		
 	}

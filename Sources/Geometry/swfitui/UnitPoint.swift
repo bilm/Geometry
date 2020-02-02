@@ -6,21 +6,37 @@
 //  Copyright © 2020 Lightswitch Ink. All rights reserved.
 //
 
-//#if canImport(SwiftUI)
-//import SwiftUI
-//#endif
-
 import CoreGraphics
 
+#if canImport(SwiftUI)
+
+import SwiftUI
+
+@available(iOS 13.0, *)
 extension CGSize {
 	
-//	func unit(_ unit: UnitPoint) ->CGPoint {
-//		
-//		CGPoint(
-//			x: unit.x * width,
-//			y: unit.y * height
-//		)
-//
-//	}
+	/// Calculate a Point via Size and UnitPoint
+	/// - Parameter unit: a Unit Point
+	func unit(_ unit: UnitPoint) ->CGPoint {
+		
+		CGPoint(
+			x: unit.x * width,
+			y: unit.y * height
+		)
+
+	}
 
 }
+
+@available(iOS 13.0, *)
+extension CGRect {
+	
+	/// Calculate a Point via a Rect and UnitPoint
+	/// - Parameter unit: a Unit Point
+	func unit(_ unit: UnitPoint) ->CGPoint {
+		
+		size.unit(unit) + origin
+		
+	}
+}
+#endif

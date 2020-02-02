@@ -8,6 +8,7 @@
 import Foundation
 import CoreGraphics
 
+/// Give a good description of a Float
 extension CGFloat: LosslessStringConvertible {
 	
 	public init?(_ description: String) {
@@ -19,6 +20,7 @@ extension CGFloat: LosslessStringConvertible {
 	
 }
 
+/// Multiply a Float and a Point
 extension CGFloat {
 	
 	public static func *(lhs: CGFloat, rhs: CGPoint) ->CGPoint {
@@ -32,6 +34,7 @@ extension CGFloat {
 
 }
 
+/// Multiply a Float and a Size
 extension CGFloat {
 	
 	public static func *(lhs: CGFloat, rhs: CGSize) ->CGSize {
@@ -45,6 +48,7 @@ extension CGFloat {
 
 }
 
+/// multiply a float and a Vector
 extension CGFloat {
 	
 	public static func *(lhs: CGFloat, rhs: CGVector) ->CGVector {
@@ -58,6 +62,7 @@ extension CGFloat {
 
 }
 
+/// Answer if two Floats are close enough
 extension CGFloat {
 	
 	public func closeEnough(to float:CGFloat) ->Bool {
