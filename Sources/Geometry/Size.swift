@@ -80,7 +80,7 @@ extension CGSize {
 /// Multiply a Size and a Vector
 extension CGSize {
 	
-	public static func *(lhs: CGSize, rhs: Vector) ->Vector {
+	public static func *(lhs: CGSize, rhs: CGVector) ->CGPoint {
 		
 		CGPoint(
 			x: rhs.dx * lhs.width,

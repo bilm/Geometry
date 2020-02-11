@@ -30,7 +30,7 @@ extension CGVector {
 		
 	}
 	
-	public var units: CGPoint { self / hypot(dx,dy) }
+	public var units: CGVector { self / hypot(dx,dy) }
 
 }
 
