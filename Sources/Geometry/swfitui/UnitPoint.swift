@@ -27,7 +27,7 @@ extension CGRect {
 	
 	/// Calculate a Point via a Rect and UnitPoint
 	/// - Parameter unit: a Unit Point
-	func unit(_ unit: UnitPoint) ->CGPoint {
+	public func unit(_ unit: UnitPoint) ->CGPoint {
 		
 		(size * unit) + origin
 		
@@ -37,7 +37,7 @@ extension CGRect {
 @available(iOS 13.0, *)
 extension UnitPoint {
 	
-	var outward: UnitPoint {
+	public var outward: UnitPoint {
 		
 		switch self {
 		
