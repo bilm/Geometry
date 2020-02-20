@@ -27,6 +27,16 @@ extension CGPoint {
 	
 }
 
+/// Singularity
+extension CGPoint {
+	
+	var singularity: CGRect {
+		
+		CGRect(origin: self, size: .zero)
+		
+	}
+}
+
 /// Addition between two Points giving a Point
 extension CGPoint {
 	
