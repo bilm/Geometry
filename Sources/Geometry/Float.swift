@@ -62,6 +62,22 @@ extension CGFloat {
 
 }
 
+/// multipl a float and a Rect
+extension CGFloat {
+	
+	public static func *(lhs: CGFloat, rhs: CGRect) -> CGRect {
+		
+		CGRect(
+			x: rhs.minX * lhs, 
+			y: rhs.minY * lhs, 
+			width: rhs.width * lhs, 
+			height: rhs.height * lhs
+		)
+
+	}
+
+}
+
 /// Answer if two Floats are close enough
 extension CGFloat {
 	

@@ -92,6 +92,28 @@ extension CGRect {
 }
 
 
+/// Multiply by a Scalar giving a Rect
+
+extension CGRect {
+
+	public static func *(lhs: CGRect, rhs: CGFloat) -> CGRect {
+		
+		CGRect(
+			x: lhs.minX * rhs, 
+			y: lhs.minY * rhs, 
+			width: lhs.width * rhs, 
+			height: lhs.height * rhs
+		)
+		
+	}
+	
+	public static func /(lhs: CGRect, rhs: CGFloat) -> CGRect {
+		
+		lhs / CGSize(width: rhs, height: rhs)
+	}
+	
+}
+
 /// Multiply by a Size giving a Rect
 extension CGRect {
 	
