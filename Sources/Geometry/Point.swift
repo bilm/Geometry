@@ -30,7 +30,7 @@ extension CGPoint {
 /// Singularity
 extension CGPoint {
 	
-	var singularity: CGRect {
+	public var singularity: CGRect {
 		
 		CGRect(origin: self, size: .zero)
 		
