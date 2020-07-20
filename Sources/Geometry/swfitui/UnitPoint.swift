@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-#if canImport(SwiftUI)
+//#if canImport(SwiftUI)
 
 import SwiftUI
 
@@ -61,4 +61,4 @@ extension UnitPoint {
 	
 }
 
-#endif
+//#endif
